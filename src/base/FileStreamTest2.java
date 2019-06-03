@@ -19,7 +19,6 @@ public class FileStreamTest2 {
         writer.append("English");
 
         writer.close();
-
         fop.close();
 
         FileInputStream fip = new FileInputStream(f);
