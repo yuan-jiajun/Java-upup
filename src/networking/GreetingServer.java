@@ -1,9 +1,11 @@
 package networking;
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 
 /**
  * @author yuanjiajun
@@ -16,7 +18,7 @@ public class GreetingServer extends Thread {
 
     public GreetingServer(int port) throws IOException{
         serverSocket = new ServerSocket(port);
-        serverSocket.setSoTimeout(10000);
+        serverSocket.setSoTimeout(60000);
     }
 
     public void run(){
@@ -30,9 +32,28 @@ public class GreetingServer extends Thread {
                 DataOutputStream out = new DataOutputStream(server.getOutputStream());
                 out.writeUTF("谢谢连接我：" + server.getLocalSocketAddress() + "\nGoodbye!");
                 server.close();
-            } catch (IOException e) {
+            }catch(SocketTimeoutException s)
+            {
+                System.out.println("Socket timed out!");
+                break;
+            }catch(IOException e)
+            {
                 e.printStackTrace();
+                break;
             }
+        }
+    }
+
+    public static void main(String [] args)
+    {
+        int port = Integer.parseInt(args[0]);
+        try
+        {
+            Thread t = new GreetingServer(port);
+            t.run();
+        }catch(IOException e)
+        {
+            e.printStackTrace();
         }
     }
 }

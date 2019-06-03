@@ -27,7 +27,7 @@ public class GreetingClient {
 
             InputStream inFromServer = client.getInputStream();
             DataInputStream in=new DataInputStream(inFromServer);
-            System.out.println("服务器响应： " + in.readUTF());
+            System.out.println("server respons： " + in.readUTF());
             client.close();
 
         } catch (UnknownHostException e) {
