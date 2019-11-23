@@ -25,7 +25,8 @@ public class stringlist_test {
         StringBuilder string_builder = new StringBuilder();
         String string_reader_tmp = null;
         string_reader_tmp = "null";
-        string_buffer=null;
+        string_buffer=null;//这种赋值是不合规的，置空应该用setlength函数
+//        string_buffer.setLength(0);
         string_buffer.append(string_reader_tmp);
         System.out.println(string_buffer.toString());
         string_builder.append(string_reader_tmp);
