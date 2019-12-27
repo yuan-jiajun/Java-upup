@@ -1,4 +1,4 @@
-package upup;
+package base;
 
 class test{
     int a,b;
