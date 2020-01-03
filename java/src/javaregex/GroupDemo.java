@@ -20,8 +20,8 @@ public class GroupDemo {
     public void regexGroup() {
         String line = "acl number 3000\n" +
 //                " rule 5 permit tcp source 10.10.10.0 0.0.0.255 destination 10.10.30.100 0.0.0.0 destination-port eq ftp source-port eq 80\n" +
-                " rule 10 permit tcp source 10.10.10.0 0.0.0.255 source-port eq 82 destination 10.10.30.101 0.0.0.0 destination-port eq www\n" +
-                " rule 15 permit udp source 10.10.10.0 0.0.0.255 destination 10.10.30.102 0.0.0.0 destination-port eq dns\n" +
+                " rule 10 permit tcp source 10.10.10.0 0.0.0.255 source-port eq 82 destination 10.10.30.101 0.0.0.0 destination-port eq 81\n" +
+                " rule 15 permit udp source 10.10.10.0 0.0.0.255 destination 10.10.30.102 0.0.0.0 destination-port eq 81\n" +
                 " rule 20 permit tcp source 10.10.20.0 0.0.0.255 destination 10.10.30.100 0.0.0.0 destination-port eq ftp\n" +
                 " rule 25 permit tcp source 10.10.20.0 0.0.0.255 destination 10.10.30.101 0.0.0.0 destination-port eq www\n" +
                 " rule 30 permit udp source 10.10.20.0 0.0.0.255 destination 10.10.30.102 0.0.0.0 destination-port eq dns\n" +
@@ -36,7 +36,7 @@ public class GroupDemo {
                 "(\\ssource-port\\s(eq|gt|lt|(rang\\s\\d+\\s\\d+))\\s(\\w+))?" +
                 "(\\sdestination\\s(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|any))?" +
                 "(\\sdestination-port\\s(eq|gt|lt|(rang\\s\\d+\\s\\d+))\\s(\\w+))?" +
-                ")?";
+                ")";
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(line);
