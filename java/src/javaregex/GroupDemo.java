@@ -31,7 +31,7 @@ public class GroupDemo {
                 " rule 50 deny ip source any destination any";
 
         String regex = "rule(\\s\\d+)(\\spermit|\\sdeny)(\\s\\d+|\\s\\w+)" +
-                "(" + "" +
+                "(" +
                 "(\\ssource\\s(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|any))?" +
                 "(\\ssource-port\\s(eq|gt|lt|(rang\\s\\d+\\s\\d+))\\s(\\w+))?" +
                 "(\\sdestination\\s(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|any))?" +
