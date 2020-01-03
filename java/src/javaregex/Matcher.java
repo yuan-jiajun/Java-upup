@@ -32,6 +32,7 @@ public class Matcher {
 
     @Test
     public void testReadFile() {
+        String[] yuan = {"yuan", "jiajun"};
         String filePath = "F:\\workspace\\CAEP\\itispect-parent\\target\\configfiles\\huawei\\huawei-ensp-core.cfg";
         String fileString = null;
         try {
@@ -46,7 +47,11 @@ public class Matcher {
         fileBlocksString = fileString.split("#\\s+");
 //        +(?!user-interface)+(?!NULL)
         boolean flag;
-        String[] blockLocateRegexs = new String[]{"[\\s\\S]*interface[\\s\\S]*", "^(((?!Vlanif)+(?!user-interface)+(?!NULL))[\\s\\S])*$"};
+//        String[] blockLocateRegexs = new String[]{"[\\s\\S]*interface[\\s\\S]*", "^(((?!Vlanif)+(?!user-interface)+(?!NULL))[\\s\\S])*$"};
+//        String[] blockLocateRegexs = new String[]{"[\\s\\S]*(interface|vlan\\s+\\d+)[\\s\\S]*", "^(((?!Vlanif)+(?!user-interface)+(?!NULL))[\\s\\S])*$"};
+        String[] blockLocateRegexs = new String[]{"[\\s\\S]*(interface|vlan\\s\\d)[\\s\\S]*", "^(((?!Vlanif))[\\s\\S])*$","^(((?!user-interface))[\\s\\S])*$"};
+//        String[] blockLocateRegexs = new String[]{"[\\s\\S]*(interface)[\\s\\S]*", "^(((?!user-interface))[\\s\\S])*$"};
+//        String[] blockLocateRegexs = new String[]{"[\\s\\S]*(interface)[\\s\\S]*", "^(((?!NULL))[\\s\\S])*$"};
 
         for (String fileBlockString : fileBlocksString) {
             flag = true;
