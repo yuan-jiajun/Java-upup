@@ -14,38 +14,24 @@ import java.util.regex.Pattern;
  * @date 2019/12/19 15:09
  */
 
-public class GroupDemo {
+public class GroupDemo1 {
 
     @Test
     public void regexGroup() {
-        String line = "acl number 3000\n" +
-                " rule 5 permit tcp source 10.10.10.0 0.0.0.255 destination 10.10.30.100 0.0.0.0 destination-port eq ftp source-port eq 80\n" +
-                " rule 10 permit tcp source 10.10.10.0 0.0.0.255 source-port eq 82 destination 10.10.30.101 0.0.0.0 destination-port eq 81\n" +
-                " rule 15 permit udp source 10.10.10.0 0.0.0.255 destination 10.10.30.102 0.0.0.0 destination-port eq 81\n" +
-                " rule 20 permit tcp source 10.10.20.0 0.0.0.255 destination 10.10.30.100 0.0.0.0 destination-port eq ftp\n" +
-                " rule 25 permit tcp source 10.10.20.0 0.0.0.255 destination 10.10.30.101 0.0.0.0 destination-port eq www\n" +
-                " rule 30 permit udp source 10.10.20.0 0.0.0.255 destination 10.10.30.102 0.0.0.0 destination-port eq dns\n" +
-                " rule 35 deny ip source 10.10.10.0 0.0.0.255 destination 10.10.20.0 0.0.0.255\n" +
-                " rule 40 deny ip source 10.10.10.0 0.0.0.255 destination 10.10.30.0 0.0.0.255\n" +
-                " rule 45 deny ip source 10.10.20.0 0.0.0.255 destination 10.10.30.0 0.0.0.255\n" +
-                " rule 50 deny ip source any destination any";
+        String string = "set password min-length 10  local-user policy password min-len 6";
 
-        String regex = "rule(\\s\\d+)(\\spermit|\\sdeny)(\\s\\d+|\\s\\w+)" +
-                "(" +
-                "(\\ssource\\s(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|any))?" +
-                "(\\ssource-port\\s(eq|gt|lt|(rang\\s\\d+\\s\\d+))\\s(\\w+))?" +
-                "(\\sdestination\\s(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|any))?" +
-                "(\\sdestination-port\\s(eq|gt|lt|(rang\\s\\d+\\s\\d+))\\s(\\w+))?" +
-                ")";
+        String regex = "(set\\s+password\\s+min-length\\s+(\\d+))|(local-user\\s+policy\\s+password\\s+min-len\\s(\\d+))";
 
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(line);
+        Matcher matcher = pattern.matcher(string);
         int groupCount = matcher.groupCount();
         System.out.println("groupCount: " + matcher.groupCount());
+        System.out.println();
 //        boolean a = matcher.find();
 //        if (!a) {
 //            System.out.println("NO MATCH!");
 //        }
+
         while (matcher.find()) {
             for (int i = 0; i <= groupCount; i++) {
                 System.out.println("group" + i + ":" + matcher.group(i));
