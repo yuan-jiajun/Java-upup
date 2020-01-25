@@ -1,7 +1,6 @@
 package hashmap;
 
 import org.junit.Test;
-import org.junit.jupiter.api.DynamicTest;
 
 import java.util.HashMap;
 import java.util.Map;
