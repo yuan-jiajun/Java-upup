@@ -29,6 +29,4 @@ public class Split {
     public void setLocate_line_split(String[] locate_line_split) {
         this.locate_line_split = locate_line_split;
     }
-
-
 }

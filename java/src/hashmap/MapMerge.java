@@ -1,7 +1,5 @@
 package hashmap;
 
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,10 +9,10 @@ import java.util.Map;
  * @date 2019/12/19 9:38
  */
 public class MapMerge {
-    private String key;
+    public String key;
     private String value;
 
-    @Test
+//    @Test
     public void testMapMerge() {
         Map<String, String> map1 = new HashMap<String, String>();
         Map<String, String> map2 = new HashMap<String, String>();
