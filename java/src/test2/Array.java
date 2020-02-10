@@ -5,7 +5,7 @@ package test2;
  * @description
  * @date 2019/12/13 10:00
  */
-public class Array {
+public class Array extends Thread{
 
     public static void main(String[] args) {
         String[][] strings = new String[10][12];
@@ -16,6 +16,9 @@ public class Array {
             }
         }
         System.out.println(strings.length);
+    }
 
+    public void call(){
+        start();
     }
 }
