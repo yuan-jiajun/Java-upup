@@ -1,4 +1,4 @@
-package runoob2nd.demos;
+package runoob2nd.demos1;
 
 import org.junit.Test;
 
@@ -51,9 +51,5 @@ public class Demo1 {
         for (String testString : testList) {
             System.out.println(testList.size());
         }
-
-
     }
-
-
 }
