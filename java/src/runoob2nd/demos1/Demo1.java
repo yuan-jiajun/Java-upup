@@ -19,7 +19,7 @@ class FreshJuice {
 class InnerClass {
     private int age = 12;
 
-    public void Print(int x) {
+    public void Print(final int x) {
         class In {
             public void inPrint() {
                 System.out.println(x);
