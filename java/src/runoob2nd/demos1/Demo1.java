@@ -52,4 +52,25 @@ public class Demo1 {
             System.out.println(testList.size());
         }
     }
+
+    @Test
+    public void testInteger() {
+        Integer a1 = 127;
+        Integer b1 = 127;
+        System.out.println(a1 == b1); //true
+        System.out.println(a1.equals(b1));  // 输出 true
+
+        Integer a2 = 128;
+        Integer b2 = 128;
+        System.out.println(a2 == b2); //false
+        System.out.println(a2.equals(b2));  // 输出 true
+
+        System.out.println(new Integer(100) == new Integer(100)); //false
+        System.out.println(Integer.valueOf(100) == Integer.valueOf(100)); //true
+
+        Integer int1 = 200;
+        int int2 = 200;
+        System.out.println(new Integer(200) == int1);//false
+        System.out.println(int1 == int2);//true
+    }
 }
