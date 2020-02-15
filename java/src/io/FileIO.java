@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class fileio {
+public class FileIO {
     public static Random ran = new Random();
 
     public static void main(String[] args) {

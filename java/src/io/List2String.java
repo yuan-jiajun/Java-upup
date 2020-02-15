@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class list2string {
+public class List2String {
     public static void main(String[] args) {
         List<String> list1 = Arrays.asList("文学", "小说", "历史", "言情", "科幻", "悬疑");
         List<String> list2 = Arrays.asList("文学", "小说", "历史", "言情", "科幻", "悬疑");
