@@ -29,7 +29,7 @@ public class LastLineofString {
                 " password 7 0251563e120f3b\n" +
                 "!\n" +
                 "!\n" +
-                "end";
+                "end" + "\n" + "\n";
         System.out.println(extractLastLine(string));
 
     }
