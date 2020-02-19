@@ -10,7 +10,7 @@ import java.util.List;
  * @description
  * @date 2019/11/22 22:26
  */
-public class stringlist_test {
+public class StringListTest {
 
     private String[] str = {"a", "b", "c", "d", "e"};
     private String[] str2 = new String[5];
