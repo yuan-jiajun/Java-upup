@@ -1,0 +1,14 @@
+e000-842d-31e6 1/-                               10GE1/0/20          dynamic  //电汇集
+24a5-2c6f-9b8c 1/-                               10GE1/0/20          dynamic  //电汇集
+74ea-cb74-026d 1/-                               10GE1/0/21          dynamic  //电汇集
+74ea-cb73-ea37 1/-                               10GE1/0/21          dynamic  //电汇集
+74ea-cb73-ef3b 1/-                               10GE1/0/21          dynamic  //电汇集
+24a5-2c6f-9b2b 1/-                               10GE1/0/21          dynamic  //电汇集
+74ea-cb73-ff37 1/-                               10GE1/0/21          dynamic  //电汇集
+cc64-a62e-f447 1/-                               10GE1/0/22          dynamic  //电汇集
+084f-0a70-4c5b 1/-                               10GE1/0/23          dynamic  //电汇集
+305a-3ac7-e411 1/-                               10GE1/0/23          dynamic  //电汇集
+4467-47c0-7d50 1/-                               10GE1/0/23          dynamic  //电汇集
+74ea-cb73-fedd 1/-                               10GE1/0/23          dynamic  //电汇集
+48d5-391c-1634 1/-                               10GE1/0/24          dynamic  //电汇集  c3光交换机mac表无此项，此mac应该是c4电交换机设备mac，，因为c4上没有接电的的服务器
+f098-3809-1e60 1/-                               40GE1/0/1:4         dynamic  //C3光汇聚  c3交换机系统mac，后无
