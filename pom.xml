@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.ntci</groupId>
-    <artifactId>javaTest</artifactId>
+    <artifactId>JavaTest</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>javaTest</name>
-    <description>javaTest</description>
+    <name>JavaTest</name>
+    <description>JavaTest</description>
 
     <properties>
         <java.version>1.8</java.version>
