@@ -1,6 +1,9 @@
 package advanced;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -32,6 +35,18 @@ public class ArrayListTest {
         while(ite.hasNext()){
             System.out.println(ite.next());
         }
+
+    }
+
+    @Test
+    public  void test() {
+        List<String> list = new ArrayList<String>();
+        String s=null;
+        s="yuan";
+        list.add(s);
+        s="jia";
+        list.add(s);
+        System.out.println(Arrays.toString(list.toArray()));
 
     }
 }
