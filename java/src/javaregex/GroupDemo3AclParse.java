@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * @description
  * @date 2020/1/7 9:41
  */
-public class GroupDemo3 {
+public class GroupDemo3AclParse {
 
     @Test
     public void regexGroup() {
@@ -30,30 +30,15 @@ public class GroupDemo3 {
                 "(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|(any)|(host\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))){1}" +
                 "(\\s(\\w+)\\s+(\\w+))?";
 
-//        private int aclNum;
-//        private int ruleNum; 1
-//        private String aclType;  3
-//        private String action;  2
-//        private String aclSource;    4  判断
-//        private String aclSourceNetmask;
-//        private String srcPortJudege; 12
-//        private String aclSourcePort; 13
-//        private String aclDestination; 14
-//        private String aclDestinationNetmask;
-//        private String dstPortJudege; 22
-//        private String aclDestinationPort; 23
-
-//        if(string.contains("mac-vlanss"))
-//        System.out.println("result:" + string.contains("mac-vlan"));
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(string);
         int groupCount = matcher.groupCount();
         System.out.println("groupCount: " + matcher.groupCount());
-//        boolean a = matcher.find();
-//        if (!a) {
-//            System.out.println("NO MATCH!");
-//        }
+        boolean a = matcher.find();
+        if (!a) {
+            System.out.println("NO MATCH!");
+        }
         while (matcher.find()) {
             for (int i = 0; i <= groupCount; i++) {
                 System.out.println("group" + i + ":" + matcher.group(i));
