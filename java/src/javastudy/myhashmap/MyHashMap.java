@@ -23,7 +23,7 @@ public class MyHashMap<K, V> {
 
     // 求index
     static int indexFor(int h, int length) {
-        return h % (length - 1);
+        return Math.abs(h % (length - 1));
     }
 
     //获取元素
