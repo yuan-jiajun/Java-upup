@@ -1,14 +1,13 @@
 package hashmap;
 
+import collectionsframework.map.hashmap.HashMapMerge;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MapMergeTest {
 
     @Test
     public void testMapMerge() {
-        MapMerge mapMerge = new MapMerge();
-        mapMerge.key = "tmp";
+        HashMapMerge hashMapMerge = new HashMapMerge();
+        hashMapMerge.key = "tmp";
     }
 }
