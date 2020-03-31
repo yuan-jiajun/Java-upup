@@ -24,18 +24,18 @@ public class QuikSort {
                     high--;
 
                 if (low < high) {
-                    System.out.println(java.util.Arrays.toString(data) + "**" + low + " " + high);
+//                    System.out.println(java.util.Arrays.toString(data) + "**" + low + " " + high);
                     swap(data, low, high);
-                    System.out.println(java.util.Arrays.toString(data) + "*" + low + " " + high);
+//                    System.out.println(java.util.Arrays.toString(data) + "*" + low + " " + high);
 
                 } else {
                     break;
                 }
             }
-            System.out.println(java.util.Arrays.toString(data) + "==" + low + " " + high);
+//            System.out.println(java.util.Arrays.toString(data) + "==" + low + " " + high);
             swap(data, start, high);
-            System.out.println(java.util.Arrays.toString(data) + "=" + low + " " + high);
-            System.out.println(start);
+//            System.out.println(java.util.Arrays.toString(data) + "=" + low + " " + high);
+//            System.out.println(start);
 
             subSort(data, start, high - 1);
             subSort(data, high + 1, end);
