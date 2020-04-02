@@ -1,4 +1,4 @@
-package javastudy;
+package javastudy.threadpool;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
@@ -19,10 +19,7 @@ public class ExecutorServiceTest {
         for (int i = 0; i < 10; i++) {
             System.out.println("=== 创建线程 " + i + " ===");
             int finalI = i;
-            Runnable run = () -> {
-//                    System.out.println("启动线程");
-                System.out.println("启动线程" + finalI);
-            };
+            Runnable run = () -> System.out.println("启动线程" + finalI);
 
 // 在未来某个时间执行给定的命令
             service.execute(run);
