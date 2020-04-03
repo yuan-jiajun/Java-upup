@@ -1,4 +1,4 @@
-package paper.hashcollision;
+package hashcollision;
 
 /**
  * @author : yuanjiajun
@@ -31,6 +31,11 @@ public class FiveTuple {
         hash = hash * seed + dstPort;
         hash = hash * seed + prot;
         return hash;
+    }
+
+    public static String ipParseInt(int ipInt) {
+        return ((ipInt >> 24) & 0xFF) + "." + ((ipInt >> 16) & 0xFF) + "."
+                + ((ipInt >> 8) & 0xFF) + "." + (ipInt & 0xFF);
     }
 
     public long getSrcIP() {

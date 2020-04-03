@@ -1,4 +1,4 @@
-package paper.hashcollision;
+package hashcollision;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -18,6 +18,11 @@ public class WriteToFile {
             new File("F:\\workspace\\paper\\data\\txt\\hashInfo.txt");
     private static File hashCollisionInfoFile =
             new File("F:\\workspace\\paper\\data\\txt\\hashCollisionInfo.txt");
+
+//    private static File hashInfoFile =
+//            new File("/home/yuan/paper/hashInfo.txt");
+//    private static File hashCollisionInfoFile =
+//            new File("/home/yuan/paper/hashCollisionInfo.txt");
 
 
     static {
