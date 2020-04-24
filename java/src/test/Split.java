@@ -11,3 +11,4 @@ public class Split {
         System.out.println(string.split("yuan")[1]);
     }
 }
+
