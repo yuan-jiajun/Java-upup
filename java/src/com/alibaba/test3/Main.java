@@ -3,40 +3,67 @@ package com.alibaba.test3;
 /**
  * @author yuanjiajun
  * @description
- * @date 2020/3/31 15:34
+ * @date 2020/4/24 17:31
  */
+
+import java.util.*;
+
 public class Main {
+
+    //评测题目: 无
+
+// 长度n的数组a，a[x]为有价值的数，当且仅当：x左侧存在大于a[x]的最小数f，右侧存在小于a[x]的最大数g，f是g的倍数。
+// 数组里面有多少有价值的数
+
+// 1 <= n <= 10^5
+// 3
+// 4 3 2
+// 1
+// https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html
+
+
     public static void main(String[] args) {
-        double tmp[] = new double[10];
-        double min = 0;
-        double mintmp = 0;
-        int res = 0;
-        boolean flag = true;
-        for (int x = 0; x <= 210; x++) {
-            mintmp = 0;
-            tmp[0] = 0.1 * Math.abs(x - 1);
-            tmp[1] = 0.1 * Math.abs(x - 9);
-            tmp[2] = 0.15 * Math.abs(x - 20);
-            tmp[3] = 0.05 * Math.abs(x - 31);
-            tmp[4] = 0.05 * Math.abs(x - 90);
-            tmp[5] = 0.1 * Math.abs(x - 110);
-            tmp[6] = 0.15 * Math.abs(x - 180);
-            tmp[7] = 0.15 * Math.abs(x - 190);
-            tmp[8] = 0.05 * Math.abs(x - 200);
-            tmp[9] = 0.1 * Math.abs(x - 210);
-            for (int i1 = 0; i1 < tmp.length; i1++) {
-                mintmp += tmp[i1];
-            }
-            if (flag) {
-                min = mintmp;
-                flag = false;
-            }
-            if (mintmp < min) {
-                min = mintmp;
-                res = x;
+        Scanner scanner = new Scanner(System.in);
+        int size = Integer.parseInt(scanner.nextLine());
+        String line = scanner.nextLine();
+
+        String[] intergers = line.split(" ");
+        TreeMap<Integer, Integer> treemap = new TreeMap<Integer, Integer>();
+        for (int i = 0; i < size; i++) {
+            treemap.put(i, Integer.parseInt(intergers[i]));
+        }
+
+        int higher = 0;
+        int lower = 0;
+        int count = 0;
+        for (int i = 1; i < size; i++) {
+            higher = treemap.higherKey(i);
+            lower = treemap.lowerKey(i);
+            if (higher % lower == 0) {
+                count++;
             }
         }
-        System.out.println(res);
-
+        System.out.println(count);
     }
+
+
+//    public class TreeMapDemo {
+//        public static void main(String[] args) {
+//
+//            // creating tree map
+//            TreeMap<Integer, String> treemap = new TreeMap<Integer, String>();
+//
+//            // populating tree map
+//            treemap.put(2, "two");
+//            treemap.put(1, "one");
+//            treemap.put(3, "three");
+//            treemap.put(6, "six");
+//            treemap.put(5, "five");
+//
+//            // getting higher key for key 4
+//            System.out.println("Checking values of the map");
+//            System.out.println("Value is: "+ treemap.higherKey(3));
+//        }
+//    }
+
 }
