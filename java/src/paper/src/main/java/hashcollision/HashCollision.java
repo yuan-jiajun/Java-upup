@@ -18,19 +18,24 @@ public class HashCollision {
 
     public static void main(String[] args) {
         List<Integer> ipList = new ArrayList<>();
-        Map<Long, Long> hashCodeList = new HashMap<>();
+        HashSet<Long> hashCodeList = new HashSet<Long>();
 
         long hashCode = 0;
         String hashInfo = null;
 
-        String time = null;
+        Date startTime = new Date();
+        Date exeTime;
+
         for (int protNum = 1; protNum < PROTOCALMAXNUM; protNum++) {
             for (int srcPort = 1; srcPort < PORTMAXNUM; srcPort++) {
                 for (int dstPort = 1; dstPort < PORTMAXNUM; dstPort++) {
-                    for (int srcIp = 16777216; srcIp < IPMAX; srcIp++) {
-                        for (int dstIp = 16777216; dstIp < IPMAX; dstIp++) {// 1 0000 0000 0000 0000 0000 0000的十进制为16777216
+                    for (int srcIp = 16777217; srcIp < Integer.MAX_VALUE; srcIp++) {
+                        for (int dstIp = 16777217; dstIp < Integer.MAX_VALUE; dstIp++) {// 1 0000 0000 0000 0000 0000 0001的十进制为16777216
+
                             if (dstIp % 8388608 == 0) {// 1000 0000 0000 0000 0000 8388608
-                                System.out.print(sdf.format(new Date()));
+                                exeTime = new Date();
+                                startTime = exeTime;
+                                System.out.print(exeTime.getTime() - startTime.getTime() + "\t");
                                 System.out.printf("srcIp: %-18s\t" +
                                                 "dstIp: %-18s\t" +
                                                 "srcPort: %-6d\t" +
@@ -43,20 +48,18 @@ public class HashCollision {
 
                             hashCode = new FiveTuple(srcIp, dstIp, srcPort, dstPort, protNum).hashCode2();
 
-                            hashInfo = "hashCode: " + hashCode + "\t" +
-                                    "srcIp: " + srcIp + "\t" +
-                                    "dstIP: " + dstIp + "\t" +
-                                    "srcPort: " + srcPort + "\t" +
-                                    "dstPort: " + dstPort + "\t" +
-                                    "prot: " + protNum;
 
-                            if (!hashCodeList.containsKey(hashCode)) {
-                                hashCodeList.put(hashCode, hashCode);
-
+                            if (hashCodeList.add(hashCode)) {
 //                                System.out.println(hashInfo);
-
 //                                WriteToFile.hashInfo(hashInfo);
+
                             } else {
+                                hashInfo = "hashCode: " + hashCode + "\t" +
+                                        "srcIp: " + srcIp + "\t" +
+                                        "dstIP: " + dstIp + "\t" +
+                                        "srcPort: " + srcPort + "\t" +
+                                        "dstPort: " + dstPort + "\t" +
+                                        "prot: " + protNum;
 
                                 System.out.println(hashInfo);
 
