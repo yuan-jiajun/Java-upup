@@ -34,8 +34,8 @@ public class HashCollision {
 
                             if (dstIp % 8388608 == 0) {// 1000 0000 0000 0000 0000 8388608
                                 exeTime = new Date();
-                                startTime = exeTime;
                                 System.out.print(exeTime.getTime() - startTime.getTime() + "\t");
+                                startTime = exeTime;
                                 System.out.printf("srcIp: %-18s\t" +
                                                 "dstIp: %-18s\t" +
                                                 "srcPort: %-6d\t" +
