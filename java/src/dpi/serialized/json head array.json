@@ -1,0 +1,346 @@
+{
+  "namespace": "dnsavro",
+  "type": "record",
+  "name": "DNSLog",
+  "fields": [
+    {
+      "name": "Time",
+      "type": [
+        "long",
+        "null"
+      ]
+    },
+    {
+      "name": "ArriveTime",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "SrcIp",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "DstIp",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "SrcPort",
+      "type": [
+        "long",
+        "null"
+      ]
+    },
+    {
+      "name": "DstPort",
+      "type": [
+        "long",
+        "null"
+      ]
+    },
+    {
+      "name": "PacketCount",
+      "type": [
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "DnsHead",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "record",
+            "name": "DNSHead",
+            "fields": [
+              {
+                "name": "TransactionID",
+                "type": "int"
+              },
+              {
+                "name": "DomainName",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "name": "ZFlag",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "QuestionCount",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "AnswerCount",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "AuthorityCount",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "AdditionalCount",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "QrFlag",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "OpCodeFlag",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "AAFlag1",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "TCFlag1",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "RDFlag1",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "RAFlag1",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              {
+                "name": "RCode1",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "DnsRequest",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "record",
+            "name": "DNSRequest",
+            "fields": [
+              {
+                "name": "Name",
+                "type": "string"
+              },
+              {
+                "name": "Type",
+                "type": "int"
+              },
+              {
+                "name": "DnsClass",
+                "type": "int"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "DnsResponses",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "record",
+            "name": "DnsResponses",
+            "fields": [
+              {
+                "name": "Name",
+                "type": "string"
+              },
+              {
+                "name": "Type",
+                "type": "int"
+              },
+              {
+                "name": "DnsClass",
+                "type": "int"
+              },
+              {
+                "name": "TimeToLive",
+                "type": "int"
+              },
+              {
+                "name": "DataLength",
+                "type": "int"
+              },
+              {
+                "name": "NameOrAddress",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "AuthNameServers",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "record",
+            "name": "AuthNameServers",
+            "fields": [
+              {
+                "name": "Name",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "name": "Type",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "DnsClass",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "TimeToLive",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "DataLength",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "NameOrAddress",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "additionalRecords",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "record",
+            "name": "additionalRecords",
+            "fields": [
+              {
+                "name": "Name",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              {
+                "name": "Type",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "DnsClass",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "TimeToLive",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "DataLength",
+                "type": [
+                  "int",
+                  "null"
+                ]
+              },
+              {
+                "name": "NameOrAddress",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

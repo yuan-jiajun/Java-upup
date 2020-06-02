@@ -1,346 +1,93 @@
 {
-  "namespace": "dnsavro",
-  "type": "record",
-  "name": "DNSLog",
-  "fields": [
+  "Time": 1586757749992,
+  "ArriveTime": "2020-05-20 05:20:00",
+  "SrcIP": "195.225.3.4",
+  "DstIP": "192.168.1.10",
+  "SrcPort": 80,
+  "DstPort": 4568,
+  "PacketCount": 1215,
+  "DnsHead": [
     {
-      "name": "Time",
-      "type": [
-        "long",
-        "null"
-      ]
+      "TransactionID": 2345,
+      "DomainName": "www.scu.edu.cn",
+      "ZFlag": 2345,
+      "QuestionCount": 1,
+      "AnswerCount": 2,
+      "AuthorityCount": 1,
+      "AdditionalCount": 4,
+      "OrFlag": true,
+      "OpCodeFlag": 1,
+      "AAFlag": true,
+      "TCFlag": false,
+      "RDFlag": true,
+      "RAFlag": true,
+      "RCode": 234
+    }
+  ],
+  "DNSRequest": [
+    {
+      "DnsClass": 2,
+      "Name": "www.scu.edu.cn",
+      "Type": 2324
     },
     {
-      "name": "ArriveTime",
-      "type": [
-        "string",
-        "null"
-      ]
+      "DnsClass": 2,
+      "Name": "www.scu.edu.cn",
+      "Type": 2324
+    }
+  ],
+  "DNSResponses": [
+    {
+      "DataLength": 2312,
+      "DnsClass": 1,
+      "Name": "www.scu.edu.cn",
+      "NameOrAddress": "10.2.5.1",
+      "TimeToLive": 2312,
+      "Type": 123
     },
     {
-      "name": "SrcIp",
-      "type": [
-        "string",
-        "null"
-      ]
+      "DataLength": 2312,
+      "DnsClass": 1,
+      "Name": "www.scu.edu.cn",
+      "NameOrAddress": "10.2.5.1",
+      "TimeToLive": 2312,
+      "Type": 123
+    }
+  ],
+  "AuthNameServers": [
+    {
+      "DataLength": 2312,
+      "DnsClass": 1,
+      "Name": "www.scu.edu.cn",
+      "NameOrAddress": "10.2.5.1",
+      "TimeToLive": 2312,
+      "Type": 123
     },
     {
-      "name": "DstIp",
-      "type": [
-        "string",
-        "null"
-      ]
+      "DataLength": 2312,
+      "DnsClass": 1,
+      "Name": "www.scu.edu.cn",
+      "NameOrAddress": "10.2.5.1",
+      "TimeToLive": 2312,
+      "Type": 123
+    }
+  ],
+  "additionalRecords": [
+    {
+      "DataLength": 2312,
+      "DnsClass": 1,
+      "Name": "www.scu.edu.cn",
+      "NameOrAddress": "10.2.5.1",
+      "TimeToLive": 2312,
+      "Type": 123
     },
     {
-      "name": "SrcPort",
-      "type": [
-        "long",
-        "null"
-      ]
-    },
-    {
-      "name": "DstPort",
-      "type": [
-        "long",
-        "null"
-      ]
-    },
-    {
-      "name": "PacketCount",
-      "type": [
-        "int",
-        "null"
-      ]
-    },
-    {
-      "name": "DNSHead",
-      "type": {
-        "type": "array",
-        "items": [
-          "null",
-          {
-            "type": "record",
-            "name": "DNSHead",
-            "fields": [
-              {
-                "name": "TransactionID",
-                "type": "int"
-              },
-              {
-                "name": "DomainName",
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              {
-                "name": "ZFlag",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "QuestionCount",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "AnswerCount",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "AuthorityCount",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "AdditionalCount",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "QrFlag",
-                "type": [
-                  "boolean",
-                  "null"
-                ]
-              },
-              {
-                "name": "OpCodeFlag",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "AAFlag1",
-                "type": [
-                  "boolean",
-                  "null"
-                ]
-              },
-              {
-                "name": "TCFlag1",
-                "type": [
-                  "boolean",
-                  "null"
-                ]
-              },
-              {
-                "name": "RDFlag1",
-                "type": [
-                  "boolean",
-                  "null"
-                ]
-              },
-              {
-                "name": "RAFlag1",
-                "type": [
-                  "boolean",
-                  "null"
-                ]
-              },
-              {
-                "name": "RCode1",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "name": "DnsRequest",
-      "type": {
-        "type": "array",
-        "items": [
-          "null",
-          {
-            "type": "record",
-            "name": "DNSRequest",
-            "fields": [
-              {
-                "name": "Name",
-                "type": "string"
-              },
-              {
-                "name": "Type",
-                "type": "int"
-              },
-              {
-                "name": "DnsClass",
-                "type": "int"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "name": "DnsResponses",
-      "type": {
-        "type": "array",
-        "items": [
-          "null",
-          {
-            "type": "record",
-            "name": "DnsResponses",
-            "fields": [
-              {
-                "name": "Name",
-                "type": "string"
-              },
-              {
-                "name": "Type",
-                "type": "int"
-              },
-              {
-                "name": "DnsClass",
-                "type": "int"
-              },
-              {
-                "name": "TimeToLive",
-                "type": "int"
-              },
-              {
-                "name": "DataLength",
-                "type": "int"
-              },
-              {
-                "name": "NameOrAddress",
-                "type": "string"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "name": "AuthNameServers",
-      "type": {
-        "type": "array",
-        "items": [
-          "null",
-          {
-            "type": "record",
-            "name": "AuthNameServers",
-            "fields": [
-              {
-                "name": "Name",
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              {
-                "name": "Type",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "DnsClass",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "TimeToLive",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "DataLength",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "NameOrAddress",
-                "type": [
-                  "string",
-                  "null"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "name": "additionalRecords",
-      "type": {
-        "type": "array",
-        "items": [
-          "null",
-          {
-            "type": "record",
-            "name": "additionalRecords",
-            "fields": [
-              {
-                "name": "Name",
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              {
-                "name": "Type",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "DnsClass",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "TimeToLive",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "DataLength",
-                "type": [
-                  "int",
-                  "null"
-                ]
-              },
-              {
-                "name": "NameOrAddress",
-                "type": [
-                  "string",
-                  "null"
-                ]
-              }
-            ]
-          }
-        ]
-      }
+      "DataLength": 2312,
+      "DnsClass": 1,
+      "Name": "www.scu.edu.cn",
+      "NameOrAddress": "10.2.5.1",
+      "TimeToLive": 2312,
+      "Type": 123
     }
   ]
 }
