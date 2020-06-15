@@ -1,7 +1,11 @@
-package java.src.annotation;
+package annotation;
 
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.*;
 
 /**
  * @interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。 方法的名称就是参数的名称，返回值类型就是参数的类型。
@@ -29,8 +33,20 @@ import java.lang.annotation.Target;
  *       @Inherited 允许子类继承父类中的注解，例子中补充。
  **/
 
-@Target(ElementType.PACKAGE)
-public @interface TestA {
-    //这里定义了一个空的注解，它能干什么呢。我也不知道，但他能用。
+//@Target({TYPE,METHOD,FIELD,CONSTRUCTOR})
+@Retention(RetentionPolicy.RUNTIME)
+
+/**
+ *   @interface用来声明一个注解，其中的每一个方法实际上是声明了一个配置参数。
+ *   方法的名称就是参数的名称，返回值类型就是参数的类型（返回值类型只能是基本类型、Class、String、enum）。可以通过default来声明参数的默认值。
+ *   */
+
+public @interface MyAnnotation {
+
+    String name();
+
+    int id() default 0;
+
+    Class<Long> gid();
 
 }
