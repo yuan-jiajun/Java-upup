@@ -2,6 +2,9 @@ package parsetool;
 import java.util.ArrayList;
 
 public class MainTest {
+    public MainTest() {
+    }
+
     public static void main(String[] args) {
         ArrayList<Publication> list= new ArrayList<Publication>();
         list = ParseTool.getParserAuthor();

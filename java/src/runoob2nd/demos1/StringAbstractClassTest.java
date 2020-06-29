@@ -7,7 +7,7 @@ import org.junit.Test;
  * @description
  * @date 2020/2/11 23:37
  */
-public class StringTest {
+public class StringAbstractClassTest {
     @Test
     public void tstString() {
         String s1 = "a" + "b" + "c";

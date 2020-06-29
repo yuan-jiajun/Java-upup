@@ -15,7 +15,7 @@ import java.util.List;
 
 /*三种方法都是用来遍历ArrayList集合，第三种方法是采用迭代器的方法，该方法可以不用担心在遍历的过程中会超出集合的长度*/
 
-public class ArrayListTest {
+public class ArrayListAbstractClassTest {
     public static void main(String[] args) {
         List<String> list = new ArrayList<String>();
         list.add("Hello");

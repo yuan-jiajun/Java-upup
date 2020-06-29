@@ -6,6 +6,7 @@ package utils;
  * @date 2020/2/25 0:15
  */
 public class QuikSort {
+
     private static void swap(int[] data, int i, int j) {
         int temp = data[i];
         data[i] = data[j];
@@ -25,20 +26,21 @@ public class QuikSort {
 
                 if (low < high) {
                     System.out.println(java.util.Arrays.toString(data) +
-                            "low_high_swap_old_low: " + low + "low_high_swap_old_high: " + high);
+                            "low_high_swap_old_low: " + low + " low_high_swap_old_high: " + high);
                     swap(data, low, high);
                     System.out.println(java.util.Arrays.toString(data) +
-                            "low_high_swap_new_low: " + low + "low_high_swap_new_high: " + high);
+                            "low_high_swap_new_low: " + low + " low_high_swap_new_high: " + high);
                 } else {
                     break;
                 }
             }
             System.out.println(java.util.Arrays.toString(data) +
-                    "start_high_swap_old_low: " + low + "start_high_swap_old_high: " + high);
+                    "start_high_swap_old_low: " + low + " start_high_swap_old_high: " + high);
             swap(data, start, high);
             System.out.println(java.util.Arrays.toString(data) +
-                    "start_high_swap_new_low: " + low + "start_high_swap_new_low: " + high);
-            System.out.println(start);
+                    "start_high_swap_new_low: " + low + " start_high_swap_new_low: " + high);
+            System.out.println("==== " + start + " ====");
+            System.out.println("==== " + end + " ====");
 
             subSort(data, start, high - 1);
             subSort(data, high + 1, end);
