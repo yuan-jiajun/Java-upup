@@ -25,15 +25,33 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>1.0.19</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.jfree/jcommon -->
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jcommon</artifactId>
+      <version>1.0.23</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
  <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>2.5.5</version>
+
           <configuration>
             <archive>
               <manifest>
@@ -56,6 +74,7 @@
           </executions>
 
         </plugin>
+
       </plugins>
   </build>
 </project>
