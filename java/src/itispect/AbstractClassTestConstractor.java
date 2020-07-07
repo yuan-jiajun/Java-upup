@@ -7,7 +7,7 @@ import org.junit.Test;
  * @description
  * @date 2019/12/27 21:08
  */
-public class TestConstractor {
+public class AbstractClassTestConstractor {
     @Test
     public void testConstractor() {
         ConfigLocateStruct configLocateStruct =

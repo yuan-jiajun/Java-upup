@@ -3,7 +3,7 @@ package hashmap;
 import collectionsframework.map.hashmap.HashMapMerge;
 import org.junit.Test;
 
-public class MapMergeTest {
+public class MapMergeAbstractClassTest {
 
     @Test
     public void testMapMerge() {

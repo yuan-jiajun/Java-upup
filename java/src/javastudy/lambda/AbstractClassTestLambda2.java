@@ -8,11 +8,11 @@ import org.junit.Test;
  * @description :
  * @date : 2020/3/31 22:05
  */
-public class TestLambda2 {
+public class AbstractClassTestLambda2 {
 
     @Test
     public void lambdaTest1() {
-        TestLambda2 tester = new TestLambda2();
+        AbstractClassTestLambda2 tester = new AbstractClassTestLambda2();
 
         // 类型声明
         MathOperation addition = (int a, int b) -> a + b;
