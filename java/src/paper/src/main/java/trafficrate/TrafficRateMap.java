@@ -41,7 +41,7 @@ public class TrafficRateMap {
             e.printStackTrace();
         }
 
-        System.out.println(log);
+//        System.out.println(log);
 
         String regex = "DPDKCAP: \\[(.*)]\\s.+\\s.+packets_capture/s:\\s+(\\S+).+bytes_capture/s:\\s+(\\S+) MB";
 
@@ -51,7 +51,7 @@ public class TrafficRateMap {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
 
         while (matcher.find()) {
-            System.out.println(matcher.group(1) + "\t" + matcher.group(2) + "\t" + matcher.group(3));
+//            System.out.println(matcher.group(1) + "\t" + matcher.group(2) + "\t" + matcher.group(3));
             Properties properties = new Properties();
 
             try {

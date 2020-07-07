@@ -1,9 +1,10 @@
 package trafficrate;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
+import java.io.*;
 import java.util.Map;
 
+import org.apache.batik.dom.GenericDOMImplementation;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -12,6 +13,12 @@ import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.graphics2d.svg.SVGGraphics2D;
+import org.jfree.graphics2d.svg.SVGUtils;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.Document;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author Yuan Jiajun
@@ -46,6 +53,19 @@ public class DrawPic {
         ChartFrame mChartFrame = new ChartFrame("折线图", mChart);
         mChartFrame.pack();
         mChartFrame.setVisible(true);
+
+        SVGGraphics2D g2 = new SVGGraphics2D(600, 400);
+        Rectangle r = new Rectangle(0, 0, 600, 400);
+        mChart.draw(g2, r);
+
+        File f = new File("java/src/paper/src/main/java/trafficrate/TrafficRate.svg");
+        try {
+            SVGUtils.writeToSVG(f, g2.getSVGElement());
+
+//            Writer out = new FileWriter(outputStream, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -86,4 +106,5 @@ public class DrawPic {
     public static void addValue(DefaultCategoryDataset mDataset, double value, String line, String columKey) {
         mDataset.addValue(value, line, columKey);
     }
+
 }
