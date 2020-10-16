@@ -54,8 +54,8 @@ public class DrawPic {
         mChartFrame.pack();
         mChartFrame.setVisible(true);
 
-        SVGGraphics2D g2 = new SVGGraphics2D(600, 400);
-        Rectangle r = new Rectangle(0, 0, 600, 400);
+        SVGGraphics2D g2 = new SVGGraphics2D(6000, 4000);
+        Rectangle r = new Rectangle(0, 0, 6000, 4000);
         mChart.draw(g2, r);
 
         File f = new File("java/src/paper/src/main/java/trafficrate/TrafficRate.svg");
@@ -70,7 +70,8 @@ public class DrawPic {
     }
 
     public static CategoryDataset GetDataset() {
-        TrafficRateMap.buildMap();
+//        TrafficRateMap.buildMap();
+        TrafficRateMap.singleFileMap("java/src/paper/src/main/java/trafficrate/logresource/ntci_traffic_process.log-20200624");
         DefaultCategoryDataset mDataset = new DefaultCategoryDataset();
         Map<Integer, Properties> myMap = TrafficRateMap.myMap;
         int total = TrafficRateMap.count;

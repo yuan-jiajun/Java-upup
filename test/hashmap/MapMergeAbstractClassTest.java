@@ -1,6 +1,6 @@
 package hashmap;
 
-import collectionsframework.map.hashmap.HashMapMerge;
+import collectionframework.map.hashmap.HashMapMerge;
 import org.junit.Test;
 
 public class MapMergeAbstractClassTest {
