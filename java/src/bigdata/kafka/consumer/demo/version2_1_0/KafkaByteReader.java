@@ -1,6 +1,5 @@
-package bigdata.kafka.consumer.demo.version2_1_0;/*
-package upup.bigdata.kafka.consumer.demo.version2_1_0;
-
+package bigdata.kafka.consumer.demo.version2_1_0;
+/*
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
