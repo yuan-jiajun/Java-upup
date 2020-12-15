@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.ntci</groupId>
-    <artifactId>Javaupup</artifactId>
+    <artifactId>Java-upup</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Javaupup</name>
-    <description>Javaupup Java 学习</description>
+    <name>Java-upup</name>
+    <description>Java-upup Java 学习</description>
 
     <properties>
         <java.version>1.8</java.version>
