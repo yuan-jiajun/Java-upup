@@ -1,2 +1,0 @@
-path:F:\\workspace\\java\\JavaTest\\resource\\filereplacetest\\Sessions
-FilePath=%n_%Y-%m-%d_%t.log----->FilePath=F:\workspace\xshell logs\%n_%Y-%m-%d_%t.log

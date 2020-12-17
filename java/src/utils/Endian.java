@@ -6,7 +6,7 @@ import javax.sound.midi.Soundbank;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-public class Main {
+public class Endian {
 
     @Test
     public void test1() {

@@ -1,4 +1,4 @@
-package utils.stringmanipulation;
+package utils.string_utils;
 
 import org.junit.Test;
 

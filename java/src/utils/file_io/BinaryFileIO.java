@@ -1,4 +1,4 @@
-package utils.fileIO;
+package utils.file_io;
 
 import java.io.*;
 import java.util.Arrays;

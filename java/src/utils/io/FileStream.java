@@ -1,4 +1,4 @@
-package utils.inputoutput;
+package utils.io;
 
 import org.junit.Test;
 
