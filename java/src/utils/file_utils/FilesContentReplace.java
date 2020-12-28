@@ -22,17 +22,18 @@ public class FilesContentReplace {
         int regex_count = Integer.parseInt(properties.getProperty("PAIR_COUNT"));
 
         File[] Files = pathFiles.listFiles();
-        if (Files == null)
+        if (Files == null) {
             return;
+        }
 
         for (File file : Files) {
-            if (file.isFile()) {
+            if (file.isFile()&&file.getName().contains("xsh")) {
                 System.out.println("File ： " + file + " is reading");
                 String fileString = FileInputOutput.fileToString(file, "UTF_16LE");
                 StringBuilder result = new StringBuilder();
 
                 for (int i = 0; i < regex_count; i++) {
-                    String regex = properties.getProperty("regex_" + i);
+                    String regex = properties.getProperty("line_regex_" + i);
                     String splitPatter = properties.getProperty("splitPatter_" + i);
                     String replace = properties.getProperty("replace_" + i);
 
@@ -42,10 +43,8 @@ public class FilesContentReplace {
                     result.append(split[1]);
                 }
 
-
-//                String dst=file.getPath() + "\\new\\" + file.getName();
-                String dst="C:\\Users\\yuanjiajun\\Desktop\\Sessions\\aa\\new\\new.xsh";
-                FileInputOutput.stringToFile(result.toString(),dst );
+                File dst = new File("C:\\Users\\yuanjiajun\\Desktop\\Sessions\\new\\" + file.getName());
+                FileInputOutput.stringToFile(result.toString(), dst);
                 result.setLength(0);
             }
 

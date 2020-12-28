@@ -28,7 +28,7 @@ public class FileInputOutput {
         return fileString.toString().trim();
     }
 
-    public static void stringToFile(String fileString, String dst) {
+    public static void stringToFile(String fileString, File dst) {
         try {
             byte bWrite[] = fileString.getBytes(StandardCharsets.UTF_8);
             OutputStream os = new FileOutputStream(dst);
@@ -37,7 +37,7 @@ public class FileInputOutput {
             }
             os.close();
         } catch (IOException e) {
-            System.out.print("Exception");
+            System.out.print(dst.getName() + " Exception\n");
         }
     }
 }

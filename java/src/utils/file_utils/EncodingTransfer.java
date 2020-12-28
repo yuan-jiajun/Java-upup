@@ -6,6 +6,8 @@ package utils.file_utils;
  * @date 2020/12/17 22:19
  */
 
+import org.junit.Test;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -36,14 +38,14 @@ public class EncodingTransfer {
 
 //            File targetFile = new File(file.getPath() + "." + targetCharset); //重命名
 
-            File targetFile = new File(file.getPath());
-            OutputStreamWriter osw = new OutputStreamWriter(
-                    new FileOutputStream(targetFile), targetCharset);
+            File targetFile = new File(file.getParentFile().getPath() + "\\new2\\" + file.getName());
+            OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(targetFile), targetCharset);
             BufferedWriter bw = new BufferedWriter(osw);
             // 以字符串的形式一次性写入
             bw.write(sb.toString());
             bw.close();
             osw.close();
+            System.out.println(file.getName() + " transfer successfully.");
         }
 
         /*else {
@@ -51,6 +53,21 @@ public class EncodingTransfer {
                 convert(subFile);
             }
         }*/
+
+    }
+
+    @Test
+    public void test() throws IOException {
+        File pathFiles = new File("C:\\Users\\yuanjiajun\\Desktop\\new");
+
+        File[] Files = pathFiles.listFiles();
+        if (Files == null) {
+            return;
+        }
+
+        for (File file : Files) {
+            convert(file, "UTF-8", "UTF-16LE");
+        }
 
     }
 
