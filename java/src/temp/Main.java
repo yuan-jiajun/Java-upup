@@ -14,6 +14,8 @@ public class Main {
     public void test() {
         File f = new File(this.getClass().getResource("/").getPath());
         System.out.println(f);
+        StringBuilder filterAclString = new StringBuilder();
+        System.out.println(filterAclString.toString());
     }
 }
 

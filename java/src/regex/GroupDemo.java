@@ -18,25 +18,23 @@ public class GroupDemo {
 
     @Test
     public void regexGroup() {
-        String line = "acl number 3000\n" +
-                " rule 5 permit tcp source 10.10.10.0 0.0.0.255 destination 10.10.30.100 0.0.0.0 destination-port eq ftp source-port eq 80\n" +
-                " rule 10 permit tcp source 10.10.10.0 0.0.0.255 source-port eq 82 destination 10.10.30.101 0.0.0.0 destination-port eq 81\n" +
-                " rule 15 permit udp source 10.10.10.0 0.0.0.255 destination 10.10.30.102 0.0.0.0 destination-port eq 81\n" +
-                " rule 20 permit tcp source 10.10.20.0 0.0.0.255 destination 10.10.30.100 0.0.0.0 destination-port eq ftp\n" +
-                " rule 25 permit tcp source 10.10.20.0 0.0.0.255 destination 10.10.30.101 0.0.0.0 destination-port eq www\n" +
-                " rule 30 permit udp source 10.10.20.0 0.0.0.255 destination 10.10.30.102 0.0.0.0 destination-port eq dns\n" +
-                " rule 35 deny ip source 10.10.10.0 0.0.0.255 destination 10.10.20.0 0.0.0.255\n" +
-                " rule 40 deny ip source 10.10.10.0 0.0.0.255 destination 10.10.30.0 0.0.0.255\n" +
-                " rule 45 deny ip source 10.10.20.0 0.0.0.255 destination 10.10.30.0 0.0.0.255\n" +
-                " rule 50 deny ip source any destination any";
+        String line = "#-166 设备安装功能: DIF_INSTALLDEVICE。\n" +
+                "#I123 进行 \"STORAGE\\REMOVABLEMEDIA\\8&19C36A0B&0&RM\" 的完全安装。\n" +
+                "#W100 在安装 \"STORAGE\\REMOVABLEMEDIA\\8&19C36A0B&0&RM\" 时 \"STORAGE\\RemovableMedia\\8&19c36a0b&0&RM\" (否绝类型 6: PNP_VetoDevice)否绝查询删除。\n" +
+                "#W104 设备 \"STORAGE\\REMOVABLEMEDIA\\8&19C36A0B&0&RM\" 需要重新启动: 查询删除失败(安装) CfgMgr32 返回: 0x17: CR_REMOVE_VETOED.\n" +
+                "#I121 \"STORAGE\\REMOVABLEMEDIA\\8&19C36A0B&0&RM\" 的设备安装成功完成。\n" +
+                "[2021/01/22 13:44:35 1880.1119]\n" +
+                "#-198 处理的命令行: \"C:\\WINDOWS\\system32\\mmc.exe\" \"C:\\WINDOWS\\system32\\compmgmt.msc\" /s\n" +
+                "#-166 设备安装功能: DIF_REMOVE。\n" +
+                "#I289 正在删除设备 \"STORAGE\\REMOVABLEMEDIA\\8&19C36A0B&0&RM\"。\n" +
+                "#I048 设备已删除。\n" +
+                "[2021/01/22 13:43:00 1880.1117]\n" +
+                "#-198 处理的命令行: \"C:\\WINDOWS\\system32\\mmc.exe\" \"C:\\WINDOWS\\system32\\compmgmt.msc\" /s\n" +
+                "#-166 设备安装功能: DIF_REMOVE。\n" +
+                "#I289 正在删除设备 \"USBSTOR\\DISK&VEN_KINGSTON&PROD_DATATRAVELER_3.0&REV_PMAP\\E0D55EA573C8E370B7E105BF&0\"。\n" +
+                "#I048 设备已删除。\n";
 
-        String regex = "rule(\\s\\d+)(\\spermit|\\sdeny)(\\s\\d+|\\s\\w+)" +
-                "(" +
-                "(\\ssource\\s(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|any))?" +
-                "(\\ssource-port\\s(eq|gt|lt|(rang\\s\\d+\\s\\d+))\\s(\\w+))?" +
-                "(\\sdestination\\s(((\\d+\\.\\d+\\.\\d+\\.\\d+)\\s(\\d+\\.\\d+\\.\\d+\\.\\d+))|any))?" +
-                "(\\sdestination-port\\s(eq|gt|lt|(rang\\s\\d+\\s\\d+))\\s(\\w+))?" +
-                ")";
+        String regex = "\\[(.+)\\](?:\\s+.+){2}\\s+\\S+\\s+正在删除设备\\s+\\S+TOR\\\\DISK&VEN_(.+)&PROD_(.+)&REV_\\S+\\\\(.+)&0";
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(line);

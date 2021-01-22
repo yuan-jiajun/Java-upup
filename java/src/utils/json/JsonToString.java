@@ -14,7 +14,7 @@ import java.io.File;
 public class JsonToString {
 
     public static void main(String[] args) {
-        String jsonFilePath = "F:\\modules\\毕业相关\\交流&汇报录音\\论文开题和进展报告.m4a.lfasr.json";
+        String jsonFilePath = "F:\\modules\\毕业相关\\交流&汇报录音\\20200106 305讨论.m4a.lfasr.json";
         String jsonString = FileInputOutput.fileToString(new File(jsonFilePath), "UTF-8");
         JSONArray jsonArray = JSONArray.parseArray(jsonString);
         StringBuilder sb = new StringBuilder();
