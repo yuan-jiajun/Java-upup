@@ -15,7 +15,7 @@
             <artifactId>lfasr-sdk</artifactId>
             <version>3.0.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/lib/lfasr-sdk-3.0.0.jar</systemPath>
+            <systemPath>src/main/resources/lib/lfasr-sdk-3.0.0.jar</systemPath>
         </dependency>
 
         <!--第三方依赖包-->

@@ -37,15 +37,15 @@ public class Child extends Parent {
 //                "regex", new String[]{"jun"}));
 
         add(new ConfigLocateStruct("serialNum", new String[]{"yuan"}, new String[]{"jia"},
-                "regex", new String[]{"jun"}, 1));
+                "src/main/java/regex", new String[]{"jun"}, 1));
         add(new ConfigLocateStruct("serialNum2", new String[]{"yuan"}, new String[]{"jia"},
-                "regex", new String[]{"jun"}));
+                "src/main/java/regex", new String[]{"jun"}));
         add(new ConfigLocateStruct("serialNum3", new String[]{"yuan"}, new String[]{"jia"},
-                "regex"));
+                "src/main/java/regex"));
         add(new ConfigLocateStruct("serialNum4", new String[]{"yuan"},
-                "regex"));
+                "src/main/java/regex"));
         add(new ConfigLocateStruct("serialNum5", new String[]{"yuan"}, new String[]{"jia"},
-                "regex", new String[]{"jun"}));
+                "src/main/java/regex", new String[]{"jun"}));
 
         for (ConfigLocateStruct list : lists) {
             add(list);
