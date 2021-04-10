@@ -1,3 +1,5 @@
+package spark_java;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -13,7 +15,7 @@ import java.util.Iterator;
 /**
  * Created by zx on 2017/10/5.
  */
-public class JavaWordCount {
+public class WordCount {
 
     public static void main(String[] args) {
 
@@ -26,7 +28,7 @@ public class JavaWordCount {
         JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
             @Override
             public Iterator<String> call(String line) throws Exception {
-                return Arrays.asList(line.split(" ")).iterator();
+                return Arrays.asList(line.split(",")).iterator();
             }
         });
 
@@ -58,7 +60,7 @@ public class JavaWordCount {
         //排序
         JavaPairRDD<Integer, String> sorted = swaped.sortByKey(false);
 
-        //调整顺序
+        //调整回顺序
         JavaPairRDD<String, Integer> result = sorted.mapToPair(new PairFunction<Tuple2<Integer, String>, String, Integer>() {
             @Override
             public Tuple2<String, Integer> call(Tuple2<Integer, String> tp) throws Exception {

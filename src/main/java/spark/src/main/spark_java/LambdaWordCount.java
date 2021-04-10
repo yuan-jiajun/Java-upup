@@ -1,3 +1,5 @@
+package spark_java;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -9,21 +11,22 @@ import java.util.Arrays;
 /**
  * Created by zx on 2017/10/5.
  */
-public class JavaLambdaWordCount {
+public class LambdaWordCount {
 
     public static void main(String[] args) {
 
-        SparkConf conf = new SparkConf().setAppName("JavaWordCount");
+//        SparkConf conf = new SparkConf().setAppName("JavaWordCount");
+        SparkConf conf = new SparkConf().setAppName("JavaWordCount").setMaster("local[*]");
         //创建sparkContext
         JavaSparkContext jsc = new JavaSparkContext(conf);
         //指定以后从哪里读取数据
         JavaRDD<String> lines = jsc.textFile(args[0]);
         //切分压平
-        JavaRDD<String> words = lines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
+        JavaRDD<String> words = lines.flatMap(line -> Arrays.asList(line.split(",")).iterator());
         //将单词和一组合
         JavaPairRDD<String, Integer> wordAndOne = words.mapToPair(w -> new Tuple2<>(w, 1));
         //聚合
-        JavaPairRDD<String, Integer> reduced = wordAndOne.reduceByKey((m, n) -> m + n);
+        JavaPairRDD<String, Integer> reduced = wordAndOne.reduceByKey(Integer::sum);
         //调整顺序
         JavaPairRDD<Integer, String> swaped = reduced.mapToPair(tp -> tp.swap());
         //排序
